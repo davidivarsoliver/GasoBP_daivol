@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426004323271",
+    "project_id": "gasobp-a2c46",
+    "storage_bucket": "gasobp-a2c46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426004323271:android:cd54e57688cc13035b17e2",
+        "android_client_info": {
+          "package_name": "com.example.gasobp_daivol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOBdgFeCh6oHVT9iASLb2Q8F_hLz39FMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

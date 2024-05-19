@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item_favoritos"
+        android:title="Item 1"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_favoritos" />
+    <item
+        android:id="@+id/menu_item_mapa"
+        android:title="Item 2"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_mapa" />
+
+
+    <item
+        android:id="@+id/menu_item_no_stock"
+        android:title="Productos fuera de stock"
+        android:icon="@drawable/ic_nostock"
+        />
+
+    <item
+        android:id="@+id/menu_item_mensaje"
+        android:title="Mensaje"
+        android:icon="@drawable/ic_chat"
+        app:showAsAction="always"/>
+</menu>

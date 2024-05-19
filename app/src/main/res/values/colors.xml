@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorStockEnStock">#00C853</color>
+    <color name="colorStockSinStock">#FF1744</color>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="appBarNightColor">#333333</color>
+    <color name="drawerNightColor">#222222</color>
+    <color name="colorPrimaryDarkNight">#333333</color>
+    <color name="colorAccentNight">#66BB6A</color>
+    <color name="backgroundColorNight">#000000</color>
+    <color name="textColorPrimaryNight">#CCCCCC</color>
+
+
+</resources>
+
+
+
