@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.gasobp_daivol.R
 import com.example.gasobp_daivol.entities.Mensaje
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.firestore.CollectionReference
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,9 +18,9 @@ class MensajeAdapter(context: Context, private val mensajes: MutableList<Mensaje
     ArrayAdapter<Mensaje>(context, 0, mensajes) {
 
     private val userColors = mutableMapOf<String, Int>()
-    private var colorRef: DatabaseReference? = null
+    private var colorRef: CollectionReference? = null
 
-    fun setColorRef(ref: DatabaseReference) {
+    fun setColorRef(ref: CollectionReference) {
         colorRef = ref
     }
 
@@ -53,4 +53,5 @@ class MensajeAdapter(context: Context, private val mensajes: MutableList<Mensaje
         return sdf.format(Date(timestamp))
     }
 }
+
 

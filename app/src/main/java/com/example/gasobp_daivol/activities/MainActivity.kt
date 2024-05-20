@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -31,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var configuracionManager: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         // Preferencias de usuario
         configuracionManager = UserPreferences(this)
         aplicarTema()
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val idiomaActual = configuracionManager.idioma
         configurarIdioma(idiomaActual)
@@ -80,12 +79,7 @@ class MainActivity : AppCompatActivity() {
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val email = FirebaseAuth.getInstance().currentUser?.email ?: ""
-        val username = email.substringBefore("@")
-        val usernameCapitalizado = username.capitalize()
-
-        binding.navigationView.getHeaderView(0).findViewById<TextView>(R.id.textViewUsername).text =
-            "Bienvenido, $usernameCapitalizado"
+        actualizarHeaderUsuario()
 
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -102,6 +96,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun actualizarHeaderUsuario() {
+        val email = FirebaseAuth.getInstance().currentUser?.email
+        if (email != null) {
+            Log.d("MainActivity", "User email: $email")
+            val username = email.substringBefore("@")
+            Log.d("MainActivity", "Username: $username")
+
+            val usernameCapitalizado = username.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+            }
+            Log.d("MainActivity", "Username capitalizado: $usernameCapitalizado")
+
+            val headerView = binding.navigationView.getHeaderView(0)
+            val textViewUsername = headerView.findViewById<TextView>(R.id.textViewUsername)
+            textViewUsername.text = "Hola, $usernameCapitalizado"
+        } else {
+            Log.d("MainActivity", "User email is null")
+            val headerView = binding.navigationView.getHeaderView(0)
+            val textViewUsername = headerView.findViewById<TextView>(R.id.textViewUsername)
+            textViewUsername.text = ""
+        }
+    }
 
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {

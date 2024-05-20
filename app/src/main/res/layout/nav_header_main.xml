@@ -18,6 +18,6 @@
         android:textSize="32sp"
         android:paddingStart="16dp"
         android:paddingBottom="8dp"
-        android:text="Bienvenido, Usuario" />
+        android:text="" />
 
 </LinearLayout>
